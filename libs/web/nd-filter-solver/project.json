@@ -1,0 +1,32 @@
+{
+  "name": "nd-filter-solver",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/web/nd-filter-solver/src",
+  "prefix": "nd",
+  "projectType": "library",
+  "tags": ["nd"],
+  "targets": {
+    "build": {
+      "executor": "@nx/angular:package",
+      "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
+      "options": {
+        "project": "libs/web/nd-filter-solver/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/web/nd-filter-solver/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/web/nd-filter-solver/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "outputs": ["{workspaceRoot}\\coverage\\libs\\web\\nd-filter-solver"]
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    }
+  }
+}

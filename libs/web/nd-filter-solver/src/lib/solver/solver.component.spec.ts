@@ -1,18 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { RouterModule } from '@angular/router';
 
-import { AppComponent } from './app.component';
+import { SolverComponent } from './solver.component';
 
-describe('AppComponent', () => {
-  let component: AppComponent;
-  let fixture: ComponentFixture<AppComponent>;
+describe('SolverComponent', () => {
+  let component: SolverComponent;
+  let fixture: ComponentFixture<SolverComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AppComponent, RouterModule.forRoot([])],
+      imports: [SolverComponent],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(AppComponent);
+    fixture = TestBed.createComponent(SolverComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

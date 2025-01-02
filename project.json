@@ -1,5 +1,5 @@
 {
-  "name": "Opt. Eng",
+  "name": "opt-eng",
   "$schema": "node_modules/nx/schemas/project-schema.json",
   "includedScripts": [],
   "projectType": "application",
@@ -11,7 +11,7 @@
       "executor": "@angular-devkit/build-angular:application",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "dist/Opt. Eng",
+        "outputPath": "dist/opt-eng",
         "index": "./src/index.html",
         "browser": "./src/main.ts",
         "polyfills": ["zone.js"],
@@ -58,10 +58,10 @@
       "executor": "@angular-devkit/build-angular:dev-server",
       "configurations": {
         "production": {
-          "buildTarget": "Opt. Eng:build:production"
+          "buildTarget": "opt-eng:build:production"
         },
         "development": {
-          "buildTarget": "Opt. Eng:build:development"
+          "buildTarget": "opt-eng:build:development"
         }
       },
       "defaultConfiguration": "development"
@@ -69,7 +69,7 @@
     "extract-i18n": {
       "executor": "@angular-devkit/build-angular:extract-i18n",
       "options": {
-        "buildTarget": "Opt. Eng:build"
+        "buildTarget": "opt-eng:build"
       }
     },
     "lint": {
@@ -79,18 +79,14 @@
       }
     },
     "test": {
-      "executor": "@nx/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/{projectName}"],
-      "options": {
-        "jestConfig": "jest.config.ts"
-      }
+      "outputs": ["{projectRoot}\\coverage\\opt-eng"]
     },
     "serve-static": {
       "executor": "@nx/web:file-server",
       "options": {
-        "buildTarget": "Opt. Eng:build",
+        "buildTarget": "opt-eng:build",
         "port": 4200,
-        "staticFilePath": "dist/Opt. Eng/browser",
+        "staticFilePath": "dist/opt-eng/browser",
         "spa": true
       }
     }

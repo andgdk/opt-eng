@@ -1,12 +1,12 @@
 {
   "extends": "./tsconfig.json",
   "compilerOptions": {
-    "outDir": "./dist/out-tsc",
-    "types": ["node"],
-    "composite": true
+    "outDir": "../../../dist/out-tsc",
+    "declaration": true,
+    "declarationMap": true,
+    "inlineSources": true,
+    "types": []
   },
-  "files": ["src/main.ts", "src/main.server.ts", "src/server.ts"],
-  "include": ["src/**/*.d.ts"],
   "exclude": [
     "src/**/*.spec.ts",
     "src/test-setup.ts",
@@ -21,5 +21,6 @@
     "src/**/*.spec.js",
     "src/**/*.test.jsx",
     "src/**/*.spec.jsx"
-  ]
+  ],
+  "include": ["src/**/*.ts"]
 }
