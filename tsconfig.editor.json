@@ -1,7 +1,6 @@
 {
   "extends": "./tsconfig.json",
   "include": ["src/**/*.ts"],
-  "compilerOptions": { "composite": true, "declaration": true },
   "exclude": [
     "vite.config.ts",
     "vite.config.mts",
