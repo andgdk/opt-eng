@@ -1,9 +1,10 @@
 {
   "name": "nd-filter-solver",
   "version": "0.0.1",
+  "sideEffects": false,
   "peerDependencies": {
     "@angular/common": "^19.0.0",
-    "@angular/core": "^19.0.0"
-  },
-  "sideEffects": false
+    "@angular/core": "^19.0.0",
+    "yalps": "~0.5.6"
+  }
 }
