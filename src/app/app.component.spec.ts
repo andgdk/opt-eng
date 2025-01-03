@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterModule } from '@angular/router';
+import { beforeEach, describe, expect, it } from 'vitest';
 
 import { AppComponent } from './app.component';
 
