@@ -1,3 +1,37 @@
 :host {
   display: block;
 }
+
+dl {
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+dt {
+  font-weight: bold;
+}
+dd {
+  margin-left: 20px;
+  &:not(:last-of-type) {
+    margin-bottom: 1rem;
+  }
+}
+
+dl.inline {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 1rem;
+  dt,
+  dd {
+    &:not(:last-of-type) {
+      margin-bottom: 0.3rem;
+    }
+  }
+}
+
+span.calculation {
+  color: light-dark(
+    var(--light-primary-color),
+    var(--dark-primary-color-light)
+  );
+}

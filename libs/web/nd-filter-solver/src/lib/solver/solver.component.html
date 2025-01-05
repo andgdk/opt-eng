@@ -1,1 +1,27 @@
-<p>Solver works!</p>
+@if (solution(); as solution) {
+<dl>
+  <dt>Status</dt>
+  <dd>{{ solution.status }}</dd>
+  <dt>Solution</dt>
+  <dd>
+    &Sum;&Delta;
+    <span data-test-id="result" class="calculation">{{ solution.result }}</span>
+    cnt.
+  </dd>
+  <dt>Variables</dt>
+  <dd>
+    <dl class="inline">
+      @for (variable of solution.variables; track $index) {
+      <dt>{{ variable[0] }}</dt>
+      <dd>
+        &#916;
+        <span attr.data-test-id="delta-{{ $index + 1 }}" class="calculation">{{
+          getDelta(variable[0])
+        }}</span>
+        cnt.
+      </dd>
+      }
+    </dl>
+  </dd>
+</dl>
+}

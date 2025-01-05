@@ -1,0 +1,25 @@
+<h1>ND Filter Solver Example</h1>
+<div class="card">
+  <nd-solver
+    [detectors]="detectors()"
+    [detectorTypes]="detectorTypes"
+    [filter]="filter()"
+  />
+</div>
+
+<button
+  type="button"
+  (click)="addDetector()"
+  (keyup)="addDetector()"
+  class="btn"
+>
+  Add Camera
+</button>
+<button
+  type="button"
+  (click)="removeDetector()"
+  (keyup)="removeDetector()"
+  class="btn"
+>
+  Remove Camera
+</button>

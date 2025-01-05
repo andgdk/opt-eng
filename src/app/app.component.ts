@@ -1,10 +1,11 @@
-import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
+/* SPDX-License-Identifier: MIT */
+/* Copyright © 2024-2025 Andreas Gödecke */
 
-import { SolverComponent } from 'nd-filter-solver';
+import { Component } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
-  imports: [RouterModule, SolverComponent],
+  imports: [RouterOutlet],
   selector: 'opt-eng-root',
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',

@@ -1,3 +1,4 @@
 {
-  "cSpell.words": ["analogjs", "Andreas", "Gödecke", "Vite", "vitest"]
+  "cSpell.words": ["analogjs", "Andreas", "Gödecke", "Vite", "vitest", "yalps"],
+  "conventionalCommits.scopes": ["demo", "nd-filter-solver"]
 }
