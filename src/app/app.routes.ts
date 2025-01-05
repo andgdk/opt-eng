@@ -1,7 +1,7 @@
 /* SPDX-License-Identifier: MIT */
 /* Copyright © 2024-2025 Andreas Gödecke */
 
-import { Route } from '@angular/router';
+import type { Route } from '@angular/router';
 
 export const appRoutes: Route[] = [
   {

@@ -75,7 +75,7 @@
     "lint": {
       "executor": "@nx/eslint:lint",
       "options": {
-        "lintFilePatterns": ["./src"]
+        "lintFilePatterns": ["./src", "libs/web/**/package.json"]
       }
     },
     "test": {

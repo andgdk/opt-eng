@@ -1,4 +1,18 @@
 {
-  "cSpell.words": ["analogjs", "Andreas", "Gödecke", "Vite", "vitest", "yalps"],
-  "conventionalCommits.scopes": ["demo", "nd-filter-solver"]
+  "cSpell.words": [
+    "analogjs",
+    "Andreas",
+    "Gödecke",
+    "ngsrc",
+    "ng-packagr",
+    "Vite",
+    "vitest",
+    "yalps"
+  ],
+  "conventionalCommits.scopes": ["demo", "nd-filter-solver"],
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "always"
+  },
+  "eslint.validate": ["javascript", "typescript", "html"],
+  "editor.defaultFormatter": "esbenp.prettier-vscode"
 }

@@ -10,7 +10,7 @@
 <button
   type="button"
   (click)="addDetector()"
-  (keyup)="addDetector()"
+  (keyup.enter)="addDetector()"
   class="btn"
 >
   Add Camera
@@ -18,7 +18,7 @@
 <button
   type="button"
   (click)="removeDetector()"
-  (keyup)="removeDetector()"
+  (keyup.enter)="removeDetector()"
   class="btn"
 >
   Remove Camera

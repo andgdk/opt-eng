@@ -129,7 +129,8 @@ export class SolverComponent {
     return Math.round(reading * transmission * 1e-2);
   }
   protected getDelta(variable: string): number {
-    // @ts-expect-error
+    // TODO: Design proper typing
+    // @ts-expect-error Need to design proper typing
     return this.variables().get(variable)?.delta ?? Infinity;
   }
 }

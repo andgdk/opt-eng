@@ -7,7 +7,7 @@ This project is meant for experimental development of widgets which might be use
 ### Widgets (0/1 ready for testing)
 
 1. ND Filter Solver [Exploration]
-   Design 🎢 > **Exploration** 🔍 > Mathematical Definition > Prototyping > Implementation > Generalization if required
+   Design 🎢 > Exploration 🔍 > Mathematical Definition 💤 > **Prototyping** ⚗ > Implementation > Generalization if required
    [ND Filter Solver package](libs/web/nd-filter-solver/README.md) | [Progress tracked by Issue #1](https://github.com/andgdk/opt-eng/issues/1)
 2. More in design phase / under consideration
 

@@ -1,10 +1,12 @@
 import type { Signal, WritableSignal } from '@angular/core';
 import {
+  ChangeDetectionStrategy,
   Component,
   provideExperimentalZonelessChangeDetection,
   signal,
 } from '@angular/core';
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import type { ComponentFixture } from '@angular/core/testing';
+import { TestBed } from '@angular/core/testing';
 import { beforeEach, describe, expect, it } from 'vitest';
 
 import { SolverComponent } from './solver.component';
@@ -47,7 +49,6 @@ describe('SolverComponent', () => {
 });
 
 describe('SolverComponent when inside a test host', () => {
-  let testHost: TestHostComponent;
   let fixture: ComponentFixture<TestHostComponent>;
   let resultEl: HTMLElement;
   let deltaEl1: HTMLElement;
@@ -62,7 +63,6 @@ describe('SolverComponent when inside a test host', () => {
   beforeEach(async () => {
     // create TestHostComponent instead of DashboardHeroComponent
     fixture = TestBed.createComponent(TestHostComponent);
-    testHost = fixture.componentInstance;
 
     await fixture.whenStable();
 
@@ -105,6 +105,7 @@ type ExampleDetectorTypes = [
     [detectorTypes]="detectorTypes"
     [filter]="filter()"
   />`,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 class TestHostComponent {
   filter: Signal<Filter[]> = signal([
