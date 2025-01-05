@@ -129,8 +129,18 @@ export class SolverComponent {
     return Math.round(reading * transmission * 1e-2);
   }
   protected getDelta(variable: string): number {
-    // TODO: Design proper typing
-    // @ts-expect-error Need to design proper typing
-    return this.variables().get(variable)?.delta ?? Infinity;
+    // CONSIDER: Design proper typing
+    const coefficients = this.variables().get(variable);
+    if (isInterfaceTypeIterable(coefficients)) {
+      return Infinity;
+    }
+    return this.variables().get(variable).delta ?? Infinity;
   }
 }
+
+
+const isInterfaceTypeIterable = (
+  i: Coefficients | Iterable<Coefficients>
+): i is Iterable<Coefficients> => {
+  return Symbol.iterator in (i as Iterable<Coefficients>);
+};
