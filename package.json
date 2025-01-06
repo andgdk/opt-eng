@@ -6,7 +6,7 @@
     "start": "nx serve --open",
     "build": "nx build",
     "lint": "nx affected:lint --parallel",
-    "test": "nx test"
+    "test": "nx affected:test"
   },
   "private": true,
   "dependencies": {
