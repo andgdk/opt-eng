@@ -131,16 +131,13 @@ export class SolverComponent {
   protected getDelta(variable: string): number {
     // CONSIDER: Design proper typing
     const coefficients = this.variables().get(variable);
-    if (isInterfaceTypeIterable(coefficients)) {
+    if (!coefficients || !isObject(coefficients)) {
       return Infinity;
     }
-    return this.variables().get(variable).delta ?? Infinity;
+    return coefficients['delta'] ?? Infinity;
   }
 }
 
-
-const isInterfaceTypeIterable = (
-  i: Coefficients | Iterable<Coefficients>
-): i is Iterable<Coefficients> => {
-  return Symbol.iterator in (i as Iterable<Coefficients>);
+const isObject = (o: unknown): o is Record<string, unknown> => {
+  return typeof o === 'object' && o !== null;
 };
