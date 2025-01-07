@@ -5,12 +5,12 @@ import type { Route } from '@angular/router';
 
 export const appRoutes: Route[] = [
   {
-    path: 'widget',
+    path: 'demo',
     children: [
       {
         path: 'nd-filter-solver',
         loadComponent: () =>
-          import('./widgets/nd-filter-solver/nd-filter-solver.component').then(
+          import('./demos/nd-filter-solver/nd-filter-solver.component').then(
             (c) => c.NdFilterSolverComponent
           ),
       },
@@ -24,5 +24,5 @@ export const appRoutes: Route[] = [
   // 	path: 'about',
   // 	loadComponent: () => import('./about/about.component').then(c => c.AboutComponent)
   // },
-  { path: '**', redirectTo: 'widget/nd-filter-solver' },
+  { path: '**', redirectTo: 'demo/nd-filter-solver' },
 ];
