@@ -1,10 +1,11 @@
 /* SPDX-License-Identifier: MIT */
 /* Copyright © 2024-2025 Andreas Gödecke */
 
-import type { OnInit, Signal } from '@angular/core';
+import type { Signal } from '@angular/core';
 import {
   ChangeDetectionStrategy,
   Component,
+  effect,
   inject,
   input,
 } from '@angular/core';
@@ -22,7 +23,7 @@ import type { Detector, DetectorType, Filter } from './solver.model';
   styleUrl: './solver.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class SolverComponent implements OnInit {
+export class SolverComponent {
   private readonly solverService = inject(SolverService);
 
   readonly detectors = input.required<Detector<DetectorType[]>[]>();
@@ -40,11 +41,11 @@ export class SolverComponent implements OnInit {
   protected readonly variables: Signal<Map<string, Coefficients>> =
     this.solverService.variables;
 
-  ngOnInit(): void {
+  private readonly solverEffect = effect(() => {
     this.solverService.detectors.set(this.detectors());
     this.solverService.detectorTypes.set(this.detectorTypes());
     this.solverService.filter.set(this.filter());
-  }
+  });
 
   protected getDelta(variable: string): number {
     // CONSIDER: Design proper typing

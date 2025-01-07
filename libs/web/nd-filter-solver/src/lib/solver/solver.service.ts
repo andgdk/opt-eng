@@ -15,7 +15,16 @@ export class SolverService {
   public readonly detectorTypes = signal<DetectorType[]>([]);
   public readonly filter = signal<Filter[]>([]);
 
-  private tempReading = [6000, 6250, 40000, 6003, 6017, 6000, 6042, 6000];
+  private readonly tempReading: Signal<number[]> = computed(() => {
+    return this.detectors().map((detector) => {
+      const baseValue = detector.type === 'typeA' ? 6000 : 40000;
+      return (
+        baseValue +
+        Math.floor(Math.random() * baseValue * 0.04) -
+        baseValue * 0.02
+      );
+    });
+  });
 
   public readonly solution: Signal<Solution<string>> = computed(() => {
     // solve(this.model, { includeZeroVariables: true });
@@ -63,12 +72,15 @@ export class SolverService {
             [`D${i + 1}`]: 1,
             [`F${filter.transmission}`]: 1,
             [`D${i + 1}R${detector.type}`]: this.theoreticalReading(
-              this.tempReading[i],
+              this.tempReading()[i],
               filter.transmission
             ),
             delta: this.calculateDelta(
               detector.type,
-              this.theoreticalReading(this.tempReading[i], filter.transmission)
+              this.theoreticalReading(
+                this.tempReading()[i],
+                filter.transmission
+              )
             ),
           });
         })

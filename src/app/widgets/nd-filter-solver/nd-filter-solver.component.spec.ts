@@ -1,6 +1,7 @@
 import { provideExperimentalZonelessChangeDetection } from '@angular/core';
 import type { ComponentFixture } from '@angular/core/testing';
 import { TestBed } from '@angular/core/testing';
+import { By } from '@angular/platform-browser';
 import { NdFilterSolverComponent } from './nd-filter-solver.component';
 
 describe('NdFilterSolverComponent', () => {
@@ -15,6 +16,7 @@ describe('NdFilterSolverComponent', () => {
 
     fixture = TestBed.createComponent(NdFilterSolverComponent);
     component = fixture.componentInstance;
+    await fixture.whenStable();
   });
 
   it('should add a new detector of type "typeA" when addDetector is called', async () => {
@@ -29,10 +31,10 @@ describe('NdFilterSolverComponent', () => {
       `Camera ${initialLength}` // There is one detector of typeB, causing the index to be off by one
     );
 
-    const deltaEl = fixture.nativeElement.querySelector(
-      '[data-test-id="delta-4"]'
+    const deltaElements = fixture.debugElement.queryAll(
+      By.css('[data-test-id^="delta-"]')
     );
-    expect(deltaEl).toBeTruthy();
-    expect(deltaEl.textContent).toBe('2');
+    expect(deltaElements).toBeTruthy();
+    expect(deltaElements.length).toBe(updatedLength);
   });
 });
