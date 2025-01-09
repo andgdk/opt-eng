@@ -16,5 +16,8 @@
     "source.sortMembers": "always"
   },
   "eslint.validate": ["javascript", "typescript", "html"],
-  "editor.defaultFormatter": "esbenp.prettier-vscode"
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "workbench.editor.customLabels.patterns": {
+    "**/src/app/demos/**": "Demo ${filename}.${extname}"
+  }
 }
