@@ -36,11 +36,11 @@ describe('SolverComponent when inside a test host', () => {
     deltaEl3 = fixture.nativeElement.querySelector('[data-test-id="delta-3"]');
   });
 
-  it.skip('should calculate the correct result', () => {
+  it('should calculate the correct result', () => {
     expect(resultEl.textContent).toBe('175');
   });
 
-  it.skip('should calculate delta correctly', () => {
+  it('should calculate delta correctly', () => {
     expect(deltaEl1.textContent).toBe('0');
     expect(deltaEl2.textContent).toBe('125');
     expect(deltaEl3.textContent).toBe('50');
