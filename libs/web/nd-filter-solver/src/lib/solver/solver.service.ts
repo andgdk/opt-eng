@@ -18,6 +18,13 @@ export class SolverService {
   private readonly tempReading: Signal<number[]> = computed(() => {
     return this.detectors().map((detector) => {
       const baseValue = detector.type === 'typeA' ? 6000 : 40000;
+      // const detectorMeta = this.detectorTypes().find(
+      //   (type) => type.typeId === detector.type
+      // ) || { targetReadingMin: 2800, targetReadingMax: 3200 };
+      // const baseValue =
+      //   2 *
+      //   (detectorMeta.targetReadingMin +
+      //     (detectorMeta.targetReadingMax - detectorMeta.targetReadingMin) / 2);
       return (
         baseValue +
         Math.floor(Math.random() * baseValue * 0.04) -
