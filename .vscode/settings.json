@@ -18,6 +18,7 @@
   "eslint.validate": ["javascript", "typescript", "html"],
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "workbench.editor.customLabels.patterns": {
-    "**/src/app/demos/**": "Demo ${filename}.${extname}"
+    "**/src/app/demos/**": "Demo ${filename}.${extname}",
+    "**/libs/web/nd-filter-solver/**": "ND ${filename}.${extname}"
   }
 }
