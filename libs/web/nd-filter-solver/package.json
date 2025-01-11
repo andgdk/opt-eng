@@ -5,7 +5,9 @@
   "peerDependencies": {
     "@analogjs/vite-plugin-angular": "~1.10.0",
     "@angular/core": "^19.0.0",
-    "@nx/vite": "20.3.0",
+    "@angular/forms": "^19.0.0",
+    "@angular/material": "^19.0.0",
+    "@nx/vite": "20.3.1",
     "vite": "^5.0.0",
     "yalps": "~0.5.6"
   }

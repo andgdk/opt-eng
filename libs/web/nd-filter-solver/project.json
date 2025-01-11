@@ -23,7 +23,7 @@
       "defaultConfiguration": "production"
     },
     "test": {
-      "outputs": ["{workspaceRoot}\\coverage\\libs\\web\\nd-filter-solver"]
+      "outputs": ["{workspaceRoot}/coverage/libs/web/nd-filter-solver"]
     },
     "lint": {
       "executor": "@nx/eslint:lint"
